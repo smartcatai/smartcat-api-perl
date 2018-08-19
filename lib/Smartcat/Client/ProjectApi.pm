@@ -56,6 +56,7 @@ sub new {
 #
 # @param string $project_id  (required)
 # @param ARRAY[CreateDocumentPropertyModel] $document_model  (required)
+# @param  $file  (required)
 # @param string $disassemble_algorithm_name  (optional)
 # @param string $external_id  (optional)
 # @param string $meta_info  (optional)
@@ -69,6 +70,11 @@ sub new {
         },
         'document_model' => {
             data_type   => 'ARRAY[CreateDocumentPropertyModel]',
+            description => '',
+            required    => '1',
+        },
+        'file' => {
+            data_type   => '',
             description => '',
             required    => '1',
         },
@@ -116,6 +122,13 @@ sub project_add_document {
     unless ( exists $args{'document_model'} ) {
         croak(
 "Missing the required parameter 'document_model' when calling project_add_document"
+        );
+    }
+
+    # verify the required parameter 'file' is set
+    unless ( exists $args{'file'} ) {
+        croak(
+"Missing the required parameter 'file' when calling project_add_document"
         );
     }
 
@@ -171,6 +184,11 @@ sub project_add_document {
     # body params
     if ( exists $args{'document_model'} ) {
         $_body_data = $args{'document_model'};
+    }
+
+    # body params
+    if ( exists $args{'file'} ) {
+        $_body_data = $args{'file'};
     }
 
     # authentication setting, if any

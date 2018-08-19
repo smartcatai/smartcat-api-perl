@@ -1137,6 +1137,7 @@ sub document_translate_with_xliff {
 #
 # @param string $document_id  (required)
 # @param UploadDocumentPropertiesModel $update_document_model  (required)
+# @param  $file  (required)
 # @param string $disassemble_algorithm_name  (optional)
 {
     my $params = {
@@ -1147,6 +1148,11 @@ sub document_translate_with_xliff {
         },
         'update_document_model' => {
             data_type   => 'UploadDocumentPropertiesModel',
+            description => '',
+            required    => '1',
+        },
+        'file' => {
+            data_type   => '',
             description => '',
             required    => '1',
         },
@@ -1179,6 +1185,13 @@ sub document_update {
     unless ( exists $args{'update_document_model'} ) {
         croak(
 "Missing the required parameter 'update_document_model' when calling document_update"
+        );
+    }
+
+    # verify the required parameter 'file' is set
+    unless ( exists $args{'file'} ) {
+        croak(
+            "Missing the required parameter 'file' when calling document_update"
         );
     }
 
@@ -1216,6 +1229,11 @@ sub document_update {
     # body params
     if ( exists $args{'update_document_model'} ) {
         $_body_data = $args{'update_document_model'};
+    }
+
+    # body params
+    if ( exists $args{'file'} ) {
+        $_body_data = $args{'file'};
     }
 
     # authentication setting, if any

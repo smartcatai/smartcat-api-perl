@@ -67,11 +67,11 @@ sub new {
         'document_export_download_export_result'} = {
         summary => 'Download the results of export',
         params  => $params,
-        returns => undef,
+        returns => 'File',
         };
 }
 
-# @return void
+# @return File
 #
 sub document_export_download_export_result {
     my ( $self, %args ) = @_;
@@ -113,11 +113,16 @@ sub document_export_download_export_result {
     my $auth_settings = [qw()];
 
     # make the API Call
-    $self->{api_client}->call_api(
+    my $response = $self->{api_client}->call_api(
         $_resource_path, $_method,    $query_params, $form_params,
         $header_params,  $_body_data, $auth_settings
     );
-    return;
+    if ( !$response ) {
+        return;
+    }
+    my $_response_object =
+      $self->{api_client}->deserialize( 'File', $response );
+    return $_response_object;
 }
 
 #

@@ -888,6 +888,12 @@
             }
           },
           {
+            "name": "file",
+            "in": "body",
+            "required": true,
+            "type": "file"
+          },
+          {
             "name": "disassembleAlgorithmName",
             "in": "query",
             "required": false,
@@ -1107,7 +1113,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns if the request has succeeded"
+            "description": "Returns if the request has succeeded",
+            "schema": {
+              "type": "file"
+            }
           },
           "204": {
             "description": "Returns if the task is not yet ready"
@@ -1960,6 +1969,12 @@
                 "$ref": "#/definitions/CreateDocumentPropertyModel"
               }
             }
+          },
+          {
+            "name": "file",
+            "in": "body",
+            "required": true,
+            "type": "file"
           },
           {
             "name": "disassembleAlgorithmName",
