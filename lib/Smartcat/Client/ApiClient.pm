@@ -88,7 +88,7 @@ sub set_timeout {
 # @param array $postData parameters to be placed in POST body
 # @param array $headerParams parameters to be place in request header
 # @return mixed
-sub call_api {
+sub _call_api {
     my $self = shift;
     my (
         $resource_path, $method,    $query_params, $post_params,
@@ -168,8 +168,12 @@ sub call_api {
             $_response->code, $_response->message, $_response->content );
     }
 
-    return $_response->content;
+    return $_response;
+}
 
+sub call_api {
+    my $self = shift;
+    return $self->_call_api(@_)->content;
 }
 
 #  Take value and turn it into a string suitable for inclusion in

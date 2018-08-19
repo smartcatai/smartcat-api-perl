@@ -112,17 +112,11 @@ sub document_export_download_export_result {
     # authentication setting, if any
     my $auth_settings = [qw()];
 
-    # make the API Call
-    my $response = $self->{api_client}->call_api(
+    # make the internal API Call
+    return $self->{api_client}->_call_api(
         $_resource_path, $_method,    $query_params, $form_params,
         $header_params,  $_body_data, $auth_settings
     );
-    if ( !$response ) {
-        return;
-    }
-    my $_response_object =
-      $self->{api_client}->deserialize( 'File', $response );
-    return $_response_object;
 }
 
 #
