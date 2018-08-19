@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,9 @@ use lib 'lib';
 use strict;
 use warnings;
 
-
 use_ok('Smartcat::Client::Object::CreateDocumentPropertyModel');
 
 my $instance = Smartcat::Client::Object::CreateDocumentPropertyModel->new();
 
-isa_ok($instance, 'Smartcat::Client::Object::CreateDocumentPropertyModel');
+isa_ok( $instance, 'Smartcat::Client::Object::CreateDocumentPropertyModel' );
 

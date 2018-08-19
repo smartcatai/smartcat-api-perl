@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,11 @@ use lib 'lib';
 use strict;
 use warnings;
 
-
 use_ok('Smartcat::Client::Object::ModelWithFilesCreateProjectModel');
 
-my $instance = Smartcat::Client::Object::ModelWithFilesCreateProjectModel->new();
+my $instance =
+  Smartcat::Client::Object::ModelWithFilesCreateProjectModel->new();
 
-isa_ok($instance, 'Smartcat::Client::Object::ModelWithFilesCreateProjectModel');
+isa_ok( $instance,
+    'Smartcat::Client::Object::ModelWithFilesCreateProjectModel' );
 

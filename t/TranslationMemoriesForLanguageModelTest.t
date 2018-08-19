@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,11 @@ use lib 'lib';
 use strict;
 use warnings;
 
-
 use_ok('Smartcat::Client::Object::TranslationMemoriesForLanguageModel');
 
-my $instance = Smartcat::Client::Object::TranslationMemoriesForLanguageModel->new();
+my $instance =
+  Smartcat::Client::Object::TranslationMemoriesForLanguageModel->new();
 
-isa_ok($instance, 'Smartcat::Client::Object::TranslationMemoriesForLanguageModel');
+isa_ok( $instance,
+    'Smartcat::Client::Object::TranslationMemoriesForLanguageModel' );
 

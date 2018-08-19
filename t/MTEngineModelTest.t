@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,9 @@ use lib 'lib';
 use strict;
 use warnings;
 
-
 use_ok('Smartcat::Client::Object::MTEngineModel');
 
 my $instance = Smartcat::Client::Object::MTEngineModel->new();
 
-isa_ok($instance, 'Smartcat::Client::Object::MTEngineModel');
+isa_ok( $instance, 'Smartcat::Client::Object::MTEngineModel' );
 

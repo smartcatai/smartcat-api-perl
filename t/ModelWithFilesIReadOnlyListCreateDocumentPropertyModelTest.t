@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,15 @@ use lib 'lib';
 use strict;
 use warnings;
 
+use_ok(
+'Smartcat::Client::Object::ModelWithFilesIReadOnlyListCreateDocumentPropertyModel'
+);
 
-use_ok('Smartcat::Client::Object::ModelWithFilesIReadOnlyListCreateDocumentPropertyModel');
+my $instance =
+  Smartcat::Client::Object::ModelWithFilesIReadOnlyListCreateDocumentPropertyModel
+  ->new();
 
-my $instance = Smartcat::Client::Object::ModelWithFilesIReadOnlyListCreateDocumentPropertyModel->new();
-
-isa_ok($instance, 'Smartcat::Client::Object::ModelWithFilesIReadOnlyListCreateDocumentPropertyModel');
+isa_ok( $instance,
+'Smartcat::Client::Object::ModelWithFilesIReadOnlyListCreateDocumentPropertyModel'
+);
 

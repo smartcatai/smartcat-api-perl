@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,11 @@ use lib 'lib';
 use strict;
 use warnings;
 
-
 use_ok('Smartcat::Client::Object::AssignMyTeamExecutivesRequestModel');
 
-my $instance = Smartcat::Client::Object::AssignMyTeamExecutivesRequestModel->new();
+my $instance =
+  Smartcat::Client::Object::AssignMyTeamExecutivesRequestModel->new();
 
-isa_ok($instance, 'Smartcat::Client::Object::AssignMyTeamExecutivesRequestModel');
+isa_ok( $instance,
+    'Smartcat::Client::Object::AssignMyTeamExecutivesRequestModel' );
 

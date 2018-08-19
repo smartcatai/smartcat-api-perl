@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,9 @@ use lib 'lib';
 use strict;
 use warnings;
 
-
 use_ok('Smartcat::Client::Object::SegmentWithMatchesModel');
 
 my $instance = Smartcat::Client::Object::SegmentWithMatchesModel->new();
 
-isa_ok($instance, 'Smartcat::Client::Object::SegmentWithMatchesModel');
+isa_ok( $instance, 'Smartcat::Client::Object::SegmentWithMatchesModel' );
 

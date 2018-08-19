@@ -1,3 +1,4 @@
+
 =begin comment
 
 Smartcat Integration API
@@ -24,10 +25,11 @@ use lib 'lib';
 use strict;
 use warnings;
 
-
 use_ok('Smartcat::Client::Object::ModelWithFilesUploadDocumentPropertiesModel');
 
-my $instance = Smartcat::Client::Object::ModelWithFilesUploadDocumentPropertiesModel->new();
+my $instance =
+  Smartcat::Client::Object::ModelWithFilesUploadDocumentPropertiesModel->new();
 
-isa_ok($instance, 'Smartcat::Client::Object::ModelWithFilesUploadDocumentPropertiesModel');
+isa_ok( $instance,
+    'Smartcat::Client::Object::ModelWithFilesUploadDocumentPropertiesModel' );
 
