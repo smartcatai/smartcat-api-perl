@@ -25,6 +25,7 @@ use strict;
 use warnings;
 use utf8;
 use Exporter;
+use JSON;
 use Carp qw( croak );
 use Log::Any qw($log);
 
@@ -179,16 +180,29 @@ sub project_add_document {
           $self->{api_client}->to_query_value( $args{'target_languages'} );
     }
 
-    my $_body_data;
+    my $_body_data = [];
 
     # body params
     if ( exists $args{'document_model'} ) {
-        $_body_data = $args{'document_model'};
+        push(
+            @$_body_data,
+            documentModel => [
+                undef,
+                undef,
+                Content_Type => 'application/json',
+                Content      => to_json( [ $args{'document_model'}->to_hash ] )
+            ]
+        );
     }
-
-    # body params
-    if ( exists $args{'file'} ) {
-        $_body_data = $args{'file'};
+    if ( exists $args{'file'} && ref $args{'file'} eq 'HASH' ) {
+        push(
+            @$_body_data,
+            file => [
+                $args{'file'}->{path},
+                $args{'file'}->{filename},
+                Content_Type => 'application/octetstream'
+            ]
+        );
     }
 
     # authentication setting, if any

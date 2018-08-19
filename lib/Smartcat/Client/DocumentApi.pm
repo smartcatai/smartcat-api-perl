@@ -25,6 +25,7 @@ use strict;
 use warnings;
 use utf8;
 use Exporter;
+use JSON;
 use Carp qw( croak );
 use Log::Any qw($log);
 
@@ -1224,16 +1225,28 @@ sub document_update {
           ->to_query_value( $args{'disassemble_algorithm_name'} );
     }
 
-    my $_body_data;
+    my $_body_data = [];
 
     # body params
     if ( exists $args{'update_document_model'} ) {
-        $_body_data = $args{'update_document_model'};
+        push(
+            @$_body_data,
+            updateDocumentModel => [
+                undef,
+                undef,
+                Content_Type => 'application/json',
+                Content => to_json( $args{'update_document_model'}->to_hash )
+            ]
+        );
     }
-
-    # body params
     if ( exists $args{'file'} ) {
-        $_body_data = $args{'file'};
+        push(
+            @$_body_data,
+            file => [
+                $args{'file'}, undef,
+                Content_Type => 'application/octetstream'
+            ]
+        );
     }
 
     # authentication setting, if any

@@ -110,6 +110,7 @@ sub _call_api {
     # body data
     $body_data = to_json( $body_data->to_hash )
       if defined $body_data
+      && ref $body_data ne 'ARRAY'
       && $body_data->can('to_hash');    # model to json string
     my $_body_data = %$post_params ? $post_params : $body_data;
 
@@ -119,7 +120,7 @@ sub _call_api {
 
         # multipart
         $header_params->{'Content-Type'} =
-          lc $header_params->{'Content-Type'} eq 'multipart/form'
+          lc $header_params->{'Content-Type'} eq 'multipart/form-data'
           ? 'form-data'
           : $header_params->{'Content-Type'};
 
@@ -130,7 +131,7 @@ sub _call_api {
 
         # multipart
         $header_params->{'Content-Type'} =
-          lc $header_params->{'Content-Type'} eq 'multipart/form'
+          lc $header_params->{'Content-Type'} eq 'multipart/form-data'
           ? 'form-data'
           : $header_params->{'Content-Type'};
 
