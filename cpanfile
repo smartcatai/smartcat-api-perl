@@ -1,4 +1,5 @@
 requires "Carp" => "0";
+requires "Class::Accessor" => "0";
 requires "Class::Data::Inheritable" => "0";
 requires "Class::Inspector" => "0";
 requires "Data::Dumper" => "0";
