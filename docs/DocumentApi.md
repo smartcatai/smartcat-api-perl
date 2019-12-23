@@ -585,7 +585,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **document_update**
-> ARRAY[DocumentModel] document_update(document_id => $document_id, update_document_model => $update_document_model, disassemble_algorithm_name => $disassemble_algorithm_name)
+> ARRAY[DocumentModel] document_update(document_id => $document_id, update_document_model => $update_document_model, disassemble_algorithm_name => $disassemble_algorithm_name, preset_disassemble_algorithm => $preset_disassemble_algorithm)
 
 
 
@@ -601,9 +601,10 @@ my $api_instance = Smartcat::Client::DocumentApi->new(
 my $document_id = 'document_id_example'; # string | 
 my $update_document_model = Smartcat::Client::Object::UploadDocumentPropertiesModel->new(); # UploadDocumentPropertiesModel | 
 my $disassemble_algorithm_name = 'disassemble_algorithm_name_example'; # string | 
+my $preset_disassemble_algorithm = 'preset_disassemble_algorithm_example'; # string |
 
 eval { 
-    my $result = $api_instance->document_update(document_id => $document_id, update_document_model => $update_document_model, disassemble_algorithm_name => $disassemble_algorithm_name);
+    my $result = $api_instance->document_update(document_id => $document_id, update_document_model => $update_document_model, disassemble_algorithm_name => $disassemble_algorithm_name, preset_disassemble_algorithm => $preset_disassemble_algorithm);
     print Dumper($result);
 };
 if ($@) {
@@ -618,6 +619,7 @@ Name | Type | Description  | Notes
  **document_id** | **string**|  | 
  **update_document_model** | [**UploadDocumentPropertiesModel**](UploadDocumentPropertiesModel.md)|  | 
  **disassemble_algorithm_name** | **string**|  | [optional] 
+ **preset_disassemble_algorithm** | **string**|  | [optional]
 
 ### Return type
 

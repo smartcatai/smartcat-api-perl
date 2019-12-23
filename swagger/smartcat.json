@@ -898,6 +898,12 @@
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "presetDisassembleAlgorithm",
+            "in": "query",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
@@ -1996,6 +2002,12 @@
           },
           {
             "name": "targetLanguages",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "presetDisassembleAlgorithm",
             "in": "query",
             "required": false,
             "type": "string"
@@ -4090,6 +4102,9 @@
           "type": "string"
         },
         "disassembleAlgorithmName": {
+          "type": "string"
+        },
+        "presetDisassembleAlgorithm": {
           "type": "string"
         },
         "bilingualFileImportSetings": {

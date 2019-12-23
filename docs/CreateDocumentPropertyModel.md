@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **external_id** | **string** |  | [optional] 
 **meta_info** | **string** |  | [optional] 
 **disassemble_algorithm_name** | **string** |  | [optional] 
+**preset_disassemble_algorithm** | **string** |  | [optional]
 **bilingual_file_import_setings** | [**BilingualFileImportSetingsModel**](BilingualFileImportSetingsModel.md) |  | [optional] 
 **target_languages** | **ARRAY[string]** |  | [optional] 
 **enable_placeholders** | **boolean** |  | [optional] 

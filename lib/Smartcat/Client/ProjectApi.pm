@@ -62,6 +62,7 @@ sub new {
 # @param string $external_id  (optional)
 # @param string $meta_info  (optional)
 # @param string $target_languages  (optional)
+# @param string $preset_disassemble_algorithm  (optional)
 {
     my $params = {
         'project_id' => {
@@ -95,6 +96,11 @@ sub new {
             required    => '0',
         },
         'target_languages' => {
+            data_type   => 'string',
+            description => '',
+            required    => '0',
+        },
+        'preset_disassemble_algorithm' => {
             data_type   => 'string',
             description => '',
             required    => '0',
@@ -178,6 +184,12 @@ sub project_add_document {
     if ( exists $args{'target_languages'} ) {
         $query_params->{'targetLanguages'} =
           $self->{api_client}->to_query_value( $args{'target_languages'} );
+    }
+
+    # query params
+    if ( exists $args{'preset_disassemble_algorithm'} ) {
+        $query_params->{'presetDisassembleAlgorithm'} =
+          $self->{api_client}->to_query_value( $args{'preset_disassemble_algorithm'} );
     }
 
     my $_body_data = [];

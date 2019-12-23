@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 
 # **project_add_document**
-> ARRAY[DocumentModel] project_add_document(project_id => $project_id, document_model => $document_model, disassemble_algorithm_name => $disassemble_algorithm_name, external_id => $external_id, meta_info => $meta_info, target_languages => $target_languages)
+> ARRAY[DocumentModel] project_add_document(project_id => $project_id, document_model => $document_model, disassemble_algorithm_name => $disassemble_algorithm_name, external_id => $external_id, meta_info => $meta_info, target_languages => $target_languages, preset_disassemble_algorithm => $preset_disassemble_algorithm)
 
 
 
@@ -50,9 +50,10 @@ my $disassemble_algorithm_name = 'disassemble_algorithm_name_example'; # string 
 my $external_id = 'external_id_example'; # string | 
 my $meta_info = 'meta_info_example'; # string | 
 my $target_languages = 'target_languages_example'; # string | 
+my $preset_disassemble_algorithm = 'preset_disassemble_algorithm_example'; # string |
 
 eval { 
-    my $result = $api_instance->project_add_document(project_id => $project_id, document_model => $document_model, disassemble_algorithm_name => $disassemble_algorithm_name, external_id => $external_id, meta_info => $meta_info, target_languages => $target_languages);
+    my $result = $api_instance->project_add_document(project_id => $project_id, document_model => $document_model, disassemble_algorithm_name => $disassemble_algorithm_name, external_id => $external_id, meta_info => $meta_info, target_languages => $target_languages, preset_disassemble_algorithm => $preset_disassemble_algorithm);
     print Dumper($result);
 };
 if ($@) {
@@ -70,6 +71,7 @@ Name | Type | Description  | Notes
  **external_id** | **string**|  | [optional] 
  **meta_info** | **string**|  | [optional] 
  **target_languages** | **string**|  | [optional] 
+ **preset_disassemble_algorithm** | **string**|  | [optional]
 
 ### Return type
 

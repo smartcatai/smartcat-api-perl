@@ -174,6 +174,13 @@ __PACKAGE__->method_documentation(
             format      => '',
             read_only   => '',
         },
+        'preset_disassemble_algorithm' => {
+            datatype    => 'string',
+            base_name   => 'presetDisassembleAlgorithm',
+            description => '',
+            format      => '',
+            read_only   => '',
+        },
         'bilingual_file_import_setings' => {
             datatype    => 'BilingualFileImportSetingsModel',
             base_name   => 'bilingualFileImportSetings',
@@ -203,6 +210,7 @@ __PACKAGE__->swagger_types(
         'external_id'                   => 'string',
         'meta_info'                     => 'string',
         'disassemble_algorithm_name'    => 'string',
+        'preset_disassemble_algorithm'  => 'string',
         'bilingual_file_import_setings' => 'BilingualFileImportSetingsModel',
         'target_languages'              => 'ARRAY[string]',
         'enable_placeholders'           => 'boolean'
@@ -214,6 +222,7 @@ __PACKAGE__->attribute_map(
         'external_id'                   => 'externalId',
         'meta_info'                     => 'metaInfo',
         'disassemble_algorithm_name'    => 'disassembleAlgorithmName',
+        'preset_disassemble_algorithm'  => 'presetDisassembleAlgorithm',
         'bilingual_file_import_setings' => 'bilingualFileImportSetings',
         'target_languages'              => 'targetLanguages',
         'enable_placeholders'           => 'enablePlaceholders'

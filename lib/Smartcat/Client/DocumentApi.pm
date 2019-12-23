@@ -1140,6 +1140,7 @@ sub document_translate_with_xliff {
 # @param UploadDocumentPropertiesModel $update_document_model  (required)
 # @param  $file  (required)
 # @param string $disassemble_algorithm_name  (optional)
+# @param string $preset_disassemble_algorithm  (optional)
 {
     my $params = {
         'document_id' => {
@@ -1158,6 +1159,11 @@ sub document_translate_with_xliff {
             required    => '1',
         },
         'disassemble_algorithm_name' => {
+            data_type   => 'string',
+            description => '',
+            required    => '0',
+        },
+        'preset_disassemble_algorithm' => {
             data_type   => 'string',
             description => '',
             required    => '0',
@@ -1223,6 +1229,12 @@ sub document_update {
     if ( exists $args{'disassemble_algorithm_name'} ) {
         $query_params->{'disassembleAlgorithmName'} = $self->{api_client}
           ->to_query_value( $args{'disassemble_algorithm_name'} );
+    }
+
+    # query params
+    if ( exists $args{'preset_disassemble_algorithm'} ) {
+        $query_params->{'presetDisassembleAlgorithm'} = $self->{api_client}
+          ->to_query_value( $args{'preset_disassemble_algorithm'} );
     }
 
     my $_body_data = [];
