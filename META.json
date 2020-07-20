@@ -1,5 +1,5 @@
 {
-   "abstract" : "a Moose role for the Smartcat Integration API",
+   "abstract" : "Smartcat Integration API client library",
    "author" : [
       "unknown"
    ],
@@ -94,7 +94,7 @@
          "web" : "https://github.com/ta2-1/smartcat-api-perl"
       }
    },
-   "version" : "0.0.1",
+   "version" : "0.0.2",
    "x_contributors" : [
       "Taras Semenenko <taras.semenenko@gmail.com>"
    ],
