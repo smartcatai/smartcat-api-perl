@@ -94,7 +94,7 @@
          "web" : "https://github.com/smartcatai/smartcat-api-perl"
       }
    },
-   "version" : "0.0.2",
+   "version" : "0.0.3",
    "x_contributors" : [
       "Taras Semenenko <taras.semenenko@gmail.com>"
    ],
